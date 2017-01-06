@@ -1,9 +1,9 @@
 d3.select("body")
     .append("svg")
-        .attr("width", 50)
+        .attr("width", 250)
         .attr("height", 50)
-    .append("circle")
-        .attr("cx", 25)
-        .attr("cy", 25)
-        .attr("r", 25)
-        .style("fill", "purple");
+    .append("text")
+        .text("Easy Peasy")
+        .attr("y", 25)
+        .attr("x", 0)
+        .style("fill", "blue");
