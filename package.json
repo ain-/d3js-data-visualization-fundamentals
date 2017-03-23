@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "server": "http-server"
+  },
+  "depencies": {},
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
