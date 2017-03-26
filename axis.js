@@ -15,12 +15,18 @@ function buildLine(ds) {
         0, d3.max(ds, d => d.sales)])
       .range([h, 0]);
 
+    var yAxis = d3.svg.axis().scale(yScale).orient("left");
+
     var lineFun = d3.svg.line()
       .x(function(d) { return xScale(d.month); })
       .y(function(d) { return yScale(d.sales); })
       .interpolate("linear");
 
     var svg = d3.select("body").append("svg").attr({ width: w, height: h});
+
+    var axis = svg.append("g").call(yAxis)
+      .attr("class", "axis");
+      //.attr("transform", "translate(" + padding + ", 0)");
 
     var viz = svg.append("path").attr({
       d: lineFun(ds),
