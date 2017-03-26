@@ -1,5 +1,6 @@
 var h = 100;
 var w = 300;
+var padding = 20;
 
 function buildLine(ds) {
 
@@ -25,8 +26,8 @@ function buildLine(ds) {
     var svg = d3.select("body").append("svg").attr({ width: w, height: h});
 
     var axis = svg.append("g").call(yAxis)
-      .attr("class", "axis");
-      //.attr("transform", "translate(" + padding + ", 0)");
+      .attr("class", "axis")
+      .attr("transform", "translate(" + padding + ", 0)");
 
     var viz = svg.append("path").attr({
       d: lineFun(ds),
