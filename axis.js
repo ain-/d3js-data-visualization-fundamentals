@@ -9,14 +9,14 @@ function buildLine(ds) {
         d3.min(ds, d => d.month),
         d3.max(ds, d => d.month)
       ])
-      .range([0, w]);
+      .range([padding+5, w-padding]);
 
     var yScale = d3.scale.linear()
       .domain([
         0, d3.max(ds, d => d.sales)])
-      .range([h, 0]);
+      .range([h - padding, 10]);
 
-    var yAxis = d3.svg.axis().scale(yScale).orient("left");
+    var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(4);
 
     var lineFun = d3.svg.line()
       .x(function(d) { return xScale(d.month); })
