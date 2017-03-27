@@ -74,8 +74,11 @@ function updateLine(ds) {
   var svg = d3.select("#svg-test");
   var yAxis = svg.selectAll("g.y-axis").call(yAxisGen);
   var xAxis = svg.selectAll("g.x-axis").call(xAxisGen);
-  var viz = svg.selectAll(".path-test").attr({
-    d: lineFun(ds)
+  var viz = svg.selectAll(".path-test")
+    .transition()
+    .duration(3000)
+    .ease("elastic")
+    .attr({d: lineFun(ds)
   });
 }
 
