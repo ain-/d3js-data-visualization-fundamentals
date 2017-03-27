@@ -64,7 +64,7 @@ function updateLine(ds) {
     .range([h - padding, 10]);
 
   var xAxisGen = d3.svg.axis().scale(xScale)
-    .orient("bottom").tickFormat(d3.time.format("%b")).ticks(5);
+    .orient("bottom").tickFormat(d3.time.format("%b")).ticks(ds.length - 1);
   var yAxisGen = d3.svg.axis().scale(yScale).orient("left").ticks(4);
 
   var lineFun = d3.svg.line()
